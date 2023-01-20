@@ -1,0 +1,9 @@
+---
+include:
+  - scam-questions.yml
+---
+question: |
+  We need you to accept our terms and conditions before we can take your assets.
+fields:
+  - Tick here: terms_accepted
+    datatype: yesno

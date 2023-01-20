@@ -1,0 +1,38 @@
+---
+question: |
+  What is your favourite cheese?
+fields:
+  - Cheese: cheese
+    datatype: radio
+    choices:
+      - camembert
+      - brie
+      - stilton
+      - cheddar
+---
+
+---
+question: |
+  What's your date of birth?
+fields:
+  - DOB: date_of_birth
+    datatype: date
+---
+---
+question: |
+  What's your salary?
+fields:
+  - Amount: salary
+    datatype: currency
+---
+
+
+---
+question: |
+  Tell me why this is your favourite cheese?
+fields:
+  - Reason: variable_name
+    datatype: text
+    input type: area
+    rows: 10
+---

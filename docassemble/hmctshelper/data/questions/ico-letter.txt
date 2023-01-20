@@ -1,0 +1,35 @@
+[Organisation Name]
+[Organisation Address]
+[Organisation Postcode]
+
+[Subject Name]
+[Subject Address]
+[Subject Postcode]
+
+[Subject Contact Number]
+
+[Subject Email Address]
+
+[The Date]
+
+Dear Sir or Madam
+
+Subject access request for [Subject Name] (account number: [Subject Account Number])
+
+Please supply the personal data you hold about me, which I am entitled to receive under data protection law, held in:
+
+[Subject Data Location]
+
+If you need any more information, please let me know as soon as possible.
+
+I would like the information providing in [Information Format] Format.
+
+It may be helpful for you to know that data protection law requires you to respond to a request for personal data within one calendar month.
+
+If you do not normally deal with these requests, please pass this letter to your data protection officer or relevant staff member.
+
+If you need advice on dealing with this request, the Information Commissioner’s Office can assist you. Its website is ico.org.uk, or it can be contacted on 0303 123 1113.
+
+Yours faithfully
+
+[Signature]

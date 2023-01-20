@@ -1,0 +1,78 @@
+---
+question: |
+  On a scale from 1 to 10 how trusting are you when it comes to sharing your personal information?
+fields:
+  - Trust Level: trust_level
+    datatype: range
+    min: 1
+    max: 10
+---
+question: What’s your name?
+fields:
+  - Your Name: person_name
+---
+question: |
+  What's your date of birth?
+fields:
+  - Bought on: date_of_birth
+    datatype: date
+---
+question: |
+  What's your salary?
+fields:
+  - Amount: salary
+    datatype: currency
+  - Period: period
+    code: |
+      period_list()
+---
+question: |
+  What's your favorite color?
+fields:
+  - Color: favorite_color
+    input type: combobox
+    choices:
+      - Red
+      - Green
+      - Purple
+---
+question: |
+  Describe your assets:
+fields:
+  - Number of cars: number_cars
+    datatype: integer
+  - Number of private islands: number_islands
+    datatype: integer
+  - Ounces of gold: gold_ounces
+    datatype: number
+---
+question: |
+  Please tick the box to confirm you accept our terms and conditions.
+fields:
+  - Tick here: terms_accepted
+    datatype: yesno
+---
+question: |
+  Please upload a copy of your photo id.
+fields:
+  - Pictures: user_photo_id
+    datatype: files
+    accept: |
+      "image/jpeg, image/png"
+---
+question: |
+  Sign your name
+subquestion: |
+  By signing your name, you agree to hand over all your asssets to us.
+signature: signature
+under: |
+  Think carefully before you do this....
+---
+question: Responses
+subquestion: |
+  ${ person_name } was born on ${ date_of_birth } and their salary is ${ salary } per ${ period }.
+  ${ person_name } owns ${ number_cars } cars, ${ number_islands } islands and ${ gold_ounces } ounces of gold.
+  ${ person_name }'s trust level is ${ trust_level } out of 10 and their favourite colour is ${ favorite_color }.
+  They provided the following photo and signature: ${ user_photo_id } and ${ signature }
+mandatory: True
+---

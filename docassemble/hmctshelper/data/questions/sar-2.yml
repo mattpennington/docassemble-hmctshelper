@@ -1,0 +1,79 @@
+---
+metadata:
+  title: |
+    Subject Access Request Helper
+  short title: |
+    SAR Helper
+  description: |
+    A tool to help people draft a Subject Access Request (SAR) using the ICO's standard template.
+  authors:
+    - name: Matthew Pennington
+      organization: Tonic Workflows
+  revision_date: 2020-10-15
+  tags:
+    - SAR
+    - GDPR
+    - DATA
+    - PRIVACY
+  error help: |
+    We are sorry but an error has occurred.
+    Please email [Matthew Pennington](mailto:workflow@tonic.works) for support.
+  exit url: /
+---
+features:
+  question back button: True
+  navigation back button: False
+  progress bar: True
+---
+include:
+  - sar-questions-1.yml
+---
+question: |
+  Subject Access Request Helper
+subquestion: |
+  A tool to help you draft a Subject Access Request (SAR) using the ICO's standard template.
+field: user_saw_intro
+---
+mandatory: True
+code: |
+  user_saw_intro
+---
+question: Responses
+subquestion: |
+  ${ org_name }
+  ${ org_address }
+  ${ org_postcode }
+
+  ${ subject_name }
+  ${ subject_address }
+  ${ subject_postcode }
+
+  ${ subject_phone_number }
+
+  ${ subject_email_address }
+
+  ${ today().format() }
+
+  Dear Sir or Madam
+
+  Subject access request for ${ subject_name } (account number: ${ subject_account_number })
+
+  Please supply the personal data you hold about me, which I am entitled to receive under data protection law, held in:
+
+  ${ subject_data_location }
+
+  If you need any more information, please let me know as soon as possible.
+
+  I would like the information providing in ${ information_format } Format.
+
+  It may be helpful for you to know that data protection law requires you to respond to a request for personal data within one calendar month.
+
+  If you do not normally deal with these requests, please pass this letter to your data protection officer or relevant staff member.
+
+  If you need advice on dealing with this request, the Information Commissioner’s Office can assist you. Its website is ico.org.uk, or it can be contacted on 0303 123 1113.
+
+  Yours faithfully
+
+  ${ subject_signature }
+mandatory: True
+---

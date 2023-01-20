@@ -1,0 +1,146 @@
+code: |
+  first_variable = 5
+  second_variable = 2
+  answer = first_variable + second_variable
+---
+question: |
+  What's 5 + 2?
+fields:
+  - Answer: answer
+    datatype: integer
+    min: 7
+    max: 7
+---
+question: |
+  The solution is ${ answer }.
+mandatory: True
+
+---
+question: |
+  What's your phone number?
+fields:
+  - Phone Number: phone_number
+    datatype: integer
+    minlength: 11
+    maxlength: 11
+---
+question: |
+  Your phone number is ${ phone_number }.
+mandatory: True
+
+
+---
+question: |
+  What's your phone number?
+fields:
+  - Phone Number: phone_number
+    datatype: text
+validation code: |
+  phone_number = re.sub("[^0-9]", "", phone_number)
+  if len(phone_number) != 11:
+    validation_error("The phone number must contain 11 digits")
+---
+question: |
+  Your phone number is ${ phone_number }.
+mandatory: True
+
+---
+
+
+---
+initial: True
+code: |
+  set_language(language)
+---
+question: |
+  What's your name?
+fields:
+  - Name: person_name
+---
+language: fr
+question: |
+  Comment vous-appelez vous?
+fields:
+  - Nom: person_name
+---
+question: |
+  What language do you speak?
+field: language
+choices:
+  - English: en
+  - Français: fr
+---
+question: Your name is ${ person_name }
+mandatory: True
+
+---
+
+---
+code: |
+  answer = user_answer
+  if answer == 7:
+    outcome = "Correct"
+    restart_label = "Restart"
+  elif answer >= 8:
+    outcome = "wrong - try a smaller number"
+    restart_label = "Try Again"
+  elif answer <= 6:
+    outcome = "wrong - try a bigger number"
+    restart_label = "Try Again"
+  else:
+    outcome = "Incorrect"
+    restart_label = "Try Again"
+---
+question: |
+  What's 5 + 2?
+fields:
+  - Answer: user_answer
+    datatype: integer
+    min: 0
+---
+mandatory: True
+question: |
+  Your answer '${ answer }' was ${ outcome }.
+buttons:
+  - ${ restart_label } : restart
+
+
+---
+mandatory: True
+code: |
+  user_net_worth = 0
+---
+mandatory: True
+code: |
+  user_net_worth = user_net_worth + user_house_value
+  user_net_worth = user_net_worth + user_car_value
+---
+question: |
+  How much is your house worth?
+fields:
+  - Value: user_house_value
+    datatype: currency
+    min: 0
+---
+question: |
+  How much is your car worth?
+fields:
+  - Value: user_car_value
+    datatype: currency
+    min: 0
+---
+mandatory: True
+question: |
+  Your net worth is ${user_net_worth}
+
+
+---
+
+---
+question: |
+  What's your name?
+fields:
+  - Name: person_name
+---
+question: Your name is ${ person_name.upper() }
+mandatory: True

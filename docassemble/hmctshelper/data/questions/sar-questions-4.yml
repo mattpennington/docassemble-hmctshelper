@@ -1,0 +1,42 @@
+---
+question: Tell us about you
+fields:
+  - Your Name: subject_name
+  - Your Address: subject_address
+  - Your Postcode: subject_postcode
+  - Your Contact Number: subject_phone_number
+  - Your Email Address: subject_email_address
+    datatype: email
+---
+question: Tell us about the Organisation you want to send an SAR to
+fields:
+  - Organisation Name: org_name
+  - Organisation Address: org_address
+  - Organisation Postcode: org_postcode
+  - Your Account Number: subject_account_number
+---
+objects:
+  - subject_data_locations: DAList.using(there_are_any=True)
+---
+question: |
+  Tell us about the ${ ordinal(i) } data item you want
+subquestion: |
+  Give specific details of where to search for the ${ ordinal(i) } item of personal data
+fields:
+  - Data Location: subject_data_locations[i]
+    input type: area
+---
+question: |
+  Is there any more data you want a copy of?
+yesno: subject_data_locations.there_is_another
+---
+question: |
+  Would you like the data in electronic or hard copy format?
+field: information_format
+choices:
+  - Electronic
+  - Hard Copy
+---
+question: |
+  Please add your signature
+signature: subject_signature

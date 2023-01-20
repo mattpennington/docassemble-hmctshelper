@@ -1,0 +1,18 @@
+---
+question: What’s your full name?
+fields:
+  - Full Name: subject_name
+---
+question: Subject Access Request ready to download
+mandatory: True
+subquestion: |
+  Click on one of the links below to download it. You can make further changes to it offline afterwards.
+attachment:
+  name: Your Subject Access Request
+  filename: sar
+  docx template file: sarTemplate.docx
+  valid formats:
+    - pdf
+    - docx
+buttons:
+  - Exit: exit

@@ -1,0 +1,9 @@
+  answer = user_answer
+  if answer == 7:
+    outcome = "Correct"
+    restart_label = "Restart"
+  else:
+    outcome = "Incorrect"
+    restart_label = "Try Again"
+
+
